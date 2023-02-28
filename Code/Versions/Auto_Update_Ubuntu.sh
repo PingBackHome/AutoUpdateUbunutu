@@ -35,7 +35,7 @@ echo -e "$Step3" >> $LOG_FILE
 sed -i 's/,/\n/g' "$LOG_FILE"
 
 # Add header to log file
-echo -e "$HEADER\nDate of Update: $(date)\n $IP_ADDR \n $HOSTNAME" | cat - "$LOG_FILE" > temp && mv temp "$LOG_FILE"
+echo -e "$HEADER\nDate of Update: $(date)\n IP address: $IP_ADDR \n Hostname: $HOSTNAME" | cat - "$LOG_FILE" > temp && mv temp "$LOG_FILE"
 
 # Export log file to home folder of the user
 cp "$LOG_FILE" ~/
