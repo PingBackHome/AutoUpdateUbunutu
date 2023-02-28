@@ -13,7 +13,7 @@ echo "Date of Update: $(date)"
 echo -e "$Step1"
 
 # Update packages
-sudo apt update >> "$LOG_FILE" 2>&1
+sudo apt update >> "$Step1 + $LOG_FILE" 2>&1
 
 echo -e "$Step2"
 # Upgrade packages
