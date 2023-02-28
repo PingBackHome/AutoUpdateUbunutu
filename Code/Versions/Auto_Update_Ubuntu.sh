@@ -1,22 +1,23 @@
 #!/bin/bash
 
 # Set variables for header and log file
-HEADER="IT2Grow v1.0.0 - Update Log"
+HEADER="it2grow v1.0.10 - Auto Update for Ubuntu\linux"
 LOG_FILE="$(date +%Y-%m-%d)-update-log.txt"
-Step1="=======Step 1 - Update list with available Ubuntu packages ======="
-Step2="=======Step 2 - Start instalation of packages ======"
-Step3="=======Step 3 - Run packages instalation again to create output ======"
+Step1="=======Step 1 - Update list with available Ubuntu packages      ======="
+Step2="=======Step 2 - Start instalation of packages                   ======="
+Step3="=======Step 3 - Creating log file, please wait....              ======="
 
 # Output header to console
 echo "$HEADER"
 echo "Date of Update: $(date)"
-echo -e "$Step1"
+
 
 # Update packages
-sudo apt update >> "$Step1 + $LOG_FILE" 2>&1
+echo "$Step1" >> $LOG_FILE
+sudo apt update >> "$LOG_FILE" 2>&1
 
-echo -e "$Step2"
 # Upgrade packages
+echo "$Step2" >> $LOG_FILE
 sudo apt upgrade -y >> "$LOG_FILE" 2>&1
 
 # Remove unnecessary packages
@@ -25,7 +26,7 @@ sudo apt autoremove -y >> "$LOG_FILE" 2>&1
 # Clean up
 sudo apt clean >> "$LOG_FILE" 2>&1
 
-echo -e "$Step3"
+echo "$Step3" >> $LOG_FILE
 # Format log file by replacing commas with newlines
 sed -i 's/,/\n/g' "$LOG_FILE"
 
