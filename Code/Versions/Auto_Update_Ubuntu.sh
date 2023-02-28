@@ -3,9 +3,9 @@
 # Set variables for header and log file
 HEADER="it2grow v1.0.10 - Auto Update for Ubuntu\linux"
 LOG_FILE="$(date +%Y-%m-%d)-update-log.txt"
-Step1="=======Step 1 - Update list with available Ubuntu packages      ======="
-Step2="=======Step 2 - Start instalation of packages                   ======="
-Step3="=======Step 3 - Creating log file, please wait....              ======="
+Step1="\n=======Step 1 - Update list with available Ubuntu packages...   ======="
+Step2="\n\n=======Step 2 - Start instalation of packages....               ======="
+Step3="\n\n=======Step 3 - Creating log file, please wait....              ======="
 
 # Output header to console
 echo "$HEADER"
