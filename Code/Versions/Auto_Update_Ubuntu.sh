@@ -31,7 +31,7 @@ echo -e "$Step3" >> $LOG_FILE
 sed -i 's/,/\n/g' "$LOG_FILE"
 
 # Add header to log file
-echo -e "$HEADER\nDate of Update: $(date)\n $Step1 \n $Step2 \n $Step3 \n" | cat - "$LOG_FILE" > temp && mv temp "$LOG_FILE"
+echo -e "$HEADER\nDate of Update: $(date)\n" | cat - "$LOG_FILE" > temp && mv temp "$LOG_FILE"
 
 # Export log file to home folder of the user
 cp "$LOG_FILE" ~/
