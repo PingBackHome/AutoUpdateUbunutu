@@ -13,11 +13,11 @@ echo "Date of Update: $(date)"
 
 
 # Update packages
-echo "$Step1" >> $LOG_FILE
+echo -e "$Step1" >> $LOG_FILE
 sudo apt update >> "$LOG_FILE" 2>&1
 
 # Upgrade packages
-echo "$Step2" >> $LOG_FILE
+echo -e "$Step2" >> $LOG_FILE
 sudo apt upgrade -y >> "$LOG_FILE" 2>&1
 
 # Remove unnecessary packages
@@ -26,7 +26,7 @@ sudo apt autoremove -y >> "$LOG_FILE" 2>&1
 # Clean up
 sudo apt clean >> "$LOG_FILE" 2>&1
 
-echo "$Step3" >> $LOG_FILE
+echo -e "$Step3" >> $LOG_FILE
 # Format log file by replacing commas with newlines
 sed -i 's/,/\n/g' "$LOG_FILE"
 
